@@ -1,0 +1,362 @@
+@import url('https://fonts.cdnfonts.com/css/devil-breeze');
+@import url('https://fonts.cdnfonts.com/css/poppins');
+@import url('https://fonts.cdnfonts.com/css/bimbo');
+
+body {
+    margin: 0;
+    font-family: "Montserrat", sans-serif;
+    background-color: #1B1B1B;
+    color: #eef8ce;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    background-image:
+        url(img/bg.png),
+        repeating-linear-gradient(to right, transparent 0 500px, #3e4b1933 500px 501px);
+    background-size: 100%;
+
+
+}
+
+*::-webkit-scrollbar {
+    width: 0;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+body {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+body.loaded {
+    opacity: 1;
+}
+
+.section {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    will-change: opacity, transform;
+    scroll-margin-top: 100px;
+    /* so nav scroll still aligns nicely */
+}
+
+.section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.content-fit {
+    width: min(1200px, 90vw);
+    margin: auto;
+    min-height: 100vh;
+    position: relative;
+    padding-block: 10em;
+}
+
+header {
+    padding-block: 1em;
+    position: fixed;
+    top: 0;
+    height: 10%;
+    width: 100%;
+    z-index: 10px;
+    backdrop-filter: blur(20px);
+    z-index: 100;
+    background-color: #1B1B1B11;
+    background-image: repeating-linear-gradient(to right, transparent 0 500px, #eee1 500px 501px);
+}
+
+header .content-fit {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: unset !important;
+    padding-block: unset !important;
+}
+
+header .content-fit nav ul {
+    display: flex;
+    gap: 2em;
+}
+
+.logo {
+    font-family: 'Devil Breeze', cursive;
+    font-size: 2em;
+    cursor: pointer;
+    color: #d1ff48;
+}
+
+
+/* Navigation Button Styling */
+nav ul li a, nav ul li i {
+    color: #eef8ce; /* Set the desired text color */
+    text-decoration: none; /* Remove underline if there is one */
+}
+
+nav ul li a:hover, nav ul li i:hover {
+    color: #d1ff48; /* Adjust the hover color if needed */
+}
+
+/* Optional: If you have buttons in the navigation */
+nav ul li button {
+    background-color: transparent;
+    border: none;
+    color: #eef8ce;  /* Button color */
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+nav ul li button:hover {
+    color: #d1ff48; /* Button hover color */
+}
+.shop-icon {
+    font-size: 2.5em;
+    color: #d1ff48;
+    transition: all 0.3s ease;
+    position: relative;
+    top: -15px;
+}
+
+.shop-icon:hover {
+    color: #9a9a9a;
+    transform: scale(1.1);
+}
+
+.shop-icon i {
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+#shop .product-category {
+    margin-top: 3em;
+    text-align: center;
+}
+
+/* Style for the Product Category */
+.product-category {
+    margin-top: 3em;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    /* Allow items to wrap onto new lines */
+    justify-content: center;
+    /* Center the items */
+}
+
+/* Style for each Product Item */
+.product-item {
+    background-color: #2e2e2e;
+    padding: 1em;
+    text-align: center;
+    border-radius: 10px;
+    width: 250px;
+    /* You can adjust the width */
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.5);
+    margin: 1em;
+    display: flex;
+    flex-direction: column;
+    /* Ensure elements stack vertically */
+    justify-content: flex-start;
+    /* Align items to the top */
+    transition: transform 0.3s ease;
+}
+
+.product-item:hover {
+    transform: scale(1.05);
+}
+
+.product-item img {
+    width: 100%;
+    border-radius: 10px;
+    margin-top: 1em;
+    /* Add some space between the image and title */
+}
+
+/* Keep title at the top */
+.product-item h3 {
+    margin-top: 0;
+    /* Remove any default margin */
+    font-size: 1.5em;
+    /* Adjust the font size */
+    font-weight: bold;
+}
+
+/* Styles for the size selection and quantity input */
+.size-selection,
+.quantity-selection {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+/* Styles for the Add to Cart button */
+.add-to-cart {
+    background-color: #d1ff48;
+    border: none;
+    padding: 0.5em;
+    cursor: pointer;
+    font-size: 1em;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.add-to-cart:hover {
+    background-color: #a1d139;
+}
+
+.add-to-cart:active {
+    transform: scale(0.98);
+}
+
+
+.order-ticket {
+    margin-top: 3em;
+    text-align: center;
+}
+
+.order-ticket input {
+    padding: 0.5em;
+    margin: 1em;
+    font-size: 1em;
+    border-radius: 5px;
+    width: 300px;
+}
+
+.order-ticket button {
+    padding: 0.5em 2em;
+    background-color: #d1ff48;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.order-ticket button:hover {
+    background-color: #a1d139;
+}
+
+#order-ticket-container {
+    margin-top: 2em;
+}
+
+#order-ticket-container .ticket {
+    background-color: #333;
+    color: #eef8ce;
+    padding: 1em;
+    margin-top: 1em;
+    border-radius: 10px;
+    text-align: left;
+    display: inline-block;
+    width: 80%;
+}
+
+/* Cart Styles */
+/* Cart Section Styling - Coffee Vibe */
+
+#cart {
+    background-color: #1B1B1B;
+    color: #eef8ce;
+    padding: 4em 2em;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+    background-image: repeating-linear-gradient(to right, transparent 0 500px, #3e4b1933 500px 501px);
+}
+
+#cart h2 {
+    font-family: 'Devil Breeze', cursive;
+    font-size: 3em;
+    text-align: center;
+    margin-bottom: 1em;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+    letter-spacing: 2px;
+    color: #d1ff48;
+}
+
+.cart-item {
+    background-color: #2e2e2e;
+    border-radius: 15px;
+    padding: 1em 2em;
+    margin-bottom: 1.5em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: transform 0.3s ease;
+    box-shadow: 0px 2px 10px rgba(0,0,0,0.5);
+}
+
+.cart-item:hover {
+    transform: scale(1.02);
+}
+
+.cart-item h3 {
+    margin: 0;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #eef8ce;
+}
+
+.cart-item button {
+    background-color: #d1ff48;
+    color: #1B1B1B;
+    padding: 0.5em 1em;
+    border: none;
+    font-size: 1em;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.cart-item button:hover {
+    background-color: #a1d139;
+    transform: scale(1.05);
+}
+
+#cart-total {
+    text-align: right;
+    font-size: 1.5em;
+    margin-top: 2em;
+    font-weight: bold;
+    color: #d1ff48;
+    padding-right: 1em;
+}
+
+#checkout-btn {
+    display: block;
+    margin: 2em auto 0 auto;
+    padding: 0.8em 2em;
+    background-color: #5c4033;
+    color: #fff;
+    border: none;
+    font-size: 1.2em;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#checkout-btn:hover {
+    background-color: #a1d139;
+    transform: scale(1.05);
+}
+
+#cart-total {
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    text-align: right;
+}
+
+#checkout-btn {
+    padding: 0.5rem 1rem;
+    background-color: #5c4033;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+#checkout-btn:hover {
+    background-color: #a1d139;
+}

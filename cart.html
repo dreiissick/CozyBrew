@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart - CozyBrew</title>
+    <link rel="stylesheet" href="css/cart.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="content-fit">
+            <div class="logo" onclick="location.href='index.html'">CozyBrew</div>
+            <nav>
+                <ul>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="receipt.html">Receipt</a></li> <!-- CHANGED FROM CART TO RECEIPT -->
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Cart Section -->
+    <section id="cart" class="section">
+        <div class="content-fit">
+            <h2>Your Cart</h2>
+            <div id="cart-items">
+                <!-- Cart items will be dynamically added here -->
+            </div>
+            <div id="cart-total">
+                <p>Total: $<span id="total-price">0.00</span></p>
+                <button id="checkout-btn" onclick="checkout()">Checkout</button>
+            </div>
+        </div>
+    </section>
+    <script src="js/cart.js"></script>
+</body>
+</html>

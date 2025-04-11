@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/index.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+    <div class="overlay">
+        <div class="logo-overlay">
+            <img src="img/DS.png" alt="Dreiissick Logo">
+        </div>
+    </div>
+    <header>
+        <div class="content-fit">
+            <div class="logo" onclick="location.href='#banner'">CozyBrew</div>
+            <nav>
+                <ul>
+                    <li><a href="#banner">Home</a></li>
+                    <li><a href="#contact">Contacts</a></li>
+                    <li>
+                        <a href="shop.html" class="shop-icon">
+                            <i data-lucide="shopping-bag"></i>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <div class="section" id="banner">
+        <div class="content-fit">
+            <div class="title" data-before="BREWINGIDEAS">THE <BR>COZY BREW</div>
+        </div>
+        <img src="img/beans.png" class="decorate" alt="" style="width: 45vw; bottom: 0; right: 0;">
+        <img src="img/beans.png" class="decorate" alt="" style="width: 30vw; bottom: 0; left: 0;">
+        <img src="img/beans.png" class="decorate" alt="" style="width: 30vw; bottom: 20vw; left: 40vh; position: absolute; z-index: -1;">
+
+
+    </div>
+    <div class="section" id="intro">
+        <div class="content-fit">
+            <div class="number">01</div>
+            <div class="des">
+                <div class="title">WELCOME TO COZY BREW</div>
+                <p>AT COZY BREW, WE BELIEVE THAT COFFEE IS MORE THAN JUST<br> A DRINK—IT’S AN EXPERIENCE.
+                    EVERY CUP WE SERVE IS AN<br> INVITATION TO PAUSE, RELAX, AND SAVOR THE LITTLE MOMENTS.<br>
+                    WHETHER YOU’RE STARTING YOUR DAY, CATCHING UP WITH A<br> FRIEND, OR LOOKING FOR A QUIET PLACE TO WORK,
+                    OUR<br> SHOP IS YOUR HAVEN OF COMFORT, WARMTH, AND GOOD VIBES.
+                    
+                    </div>
+        </div>
+    </div>
+    <div class="section" id="description">
+        <div class="content-fit">
+            <div class="number">02</div>
+            <div class="des">
+                <div class="title">OUR STORY</div>
+                <p>
+                    AT COZY BREW, WE BELIEVE THAT COFFEE IS MORE THAN JUST A DRINK—IT’S AN EXPERIENCE.
+                    EVERY CUP WE SERVE IS AN INVITATION TO PAUSE, RELAX, AND SAVOR THE LITTLE MOMENTS.
+                    WHETHER YOU’RE STARTING YOUR DAY, CATCHING UP WITH A FRIEND, OR LOOKING FOR A QUIET PLACE TO WORK,
+                    OUR SHOP IS YOUR HAVEN OF COMFORT, WARMTH, AND GOOD VIBES.
+
+                </p>
+            </div>
+        </div>
+        <img src="img/leaf1.png" class="decorate" alt="" style="width: 65vw; bottom: 23vh; right: 0; z-index: 101;">
+    </div>
+    <div class="section" id="contact">
+        <div class="content-fit">
+            <div class="number">03</div>
+            <div class="des">
+                <div class="title">CONTACT</div>
+                <table>
+                    <tr>
+                        <td>Email</td>
+                        <td><a href="mailto:leojbautista30@gmail.com">leojbautista30@gmail.com</a></td>
+                    </tr>
+                    <tr>
+                        <td>Phone</td>
+                        <td><a href="09556229041">+63 9556229041</a></td>
+                    </tr>
+                    <tr>
+                        <td>Website</td>
+                        <td><a href="https://CozyBrewcom" target="_blank">CozyBrew.com</a></td>
+                    </tr>
+                    <tr>
+                        <td>Youtube</td>
+                        <td><a href="https://youtube.com/@lundeveloper" target="_blank">@CozyBrew</a></td>
+                    </tr>
+                </table>
+    
+                <!-- Social Media Icons -->
+                <div class="social-icons">
+                    <a href="https://facebook.com" target="_blank"><i data-lucide="facebook"></i></a>
+                    <a href="https://instagram.com" target="_blank"><i data-lucide="instagram"></i></a>
+                    <a href="mailto:test@gmail.com"><i data-lucide="mail"></i></a>
+                </div>
+    
+                <div class="sign">Dreiissick</div>
+            </div>
+        </div>
+    </div>
+    
+
+
+    <div id="container3D"></div>
+
+    <script type="module" src="js/index.js"></script>
+    <script type="module">
+        import { createIcons, icons } from 'https://cdn.jsdelivr.net/npm/lucide@latest/dist/esm/lucide.js';
+        createIcons({ icons });
+    </script>
+</body>
+
+</html>

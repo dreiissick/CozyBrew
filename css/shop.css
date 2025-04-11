@@ -1,0 +1,372 @@
+@import url('https://fonts.cdnfonts.com/css/devil-breeze');
+@import url('https://fonts.cdnfonts.com/css/poppins');
+@import url('https://fonts.cdnfonts.com/css/bimbo');
+
+body {
+    margin: 0;
+    font-family: "Montserrat", sans-serif;
+    background-color: #1B1B1B;
+    color: #eef8ce;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    background-image:
+        url(img/bg.png),
+        repeating-linear-gradient(to right, transparent 0 500px, #3e4b1933 500px 501px);
+    background-size: 100%;
+}
+
+*::-webkit-scrollbar {
+    width: 0;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+body.loaded {
+    opacity: 1;
+}
+
+.section {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    will-change: opacity, transform;
+    scroll-margin-top: 100px;
+    /* so nav scroll still aligns nicely */
+}
+
+.section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.content-fit {
+    width: min(1200px, 90vw);
+    margin: auto;
+    min-height: 100vh;
+    position: relative;
+    padding-block: 10em;
+}
+
+header {
+    padding-block: 1em;
+    position: fixed;
+    top: 0;
+    height: 10%;
+    width: 100%;
+    z-index: 10px;
+    backdrop-filter: blur(20px);
+    z-index: 100;
+    background-color: #1B1B1B11;
+    background-image: repeating-linear-gradient(to right, transparent 0 500px, #eee1 500px 501px);
+}
+
+header .content-fit {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: unset !important;
+    padding-block: unset !important;
+}
+
+header .content-fit nav ul {
+    display: flex;
+    gap: 2em;
+}
+
+.logo {
+    font-family: 'Devil Breeze', cursive;
+    font-size: 2em;
+    cursor: pointer;
+    color: #d1ff48;
+}
+
+
+select {
+    position: relative;
+    z-index: 1100;
+    /* Ensures the select is above the menu */
+}
+
+/* Ensure the nav menu is below the select dropdown */
+#nav-menu {
+    position: fixed;
+    top: 60px;
+    /* Adjust the top to account for the header's height */
+    right: 0;
+    height: calc(100vh - 60px);
+    /* Adjust the height to avoid covering the icons */
+    width: 25vw;
+    background-color: #ffffff55;
+    box-shadow: -4px 0 8px rgba(0, 0, 0, 0.1);
+    padding: 40px 20px;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 999;
+    /* Ensure it's below other fixed elements */
+}
+
+/* When active (open), the menu should be above the content */
+#nav-menu.active {
+    transform: translateX(0);
+    z-index: 1000;
+    /* Ensure it sits above content when open */
+}
+
+nav ul li a {
+    color: #eef8ce;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    position: relative;
+    font-size: 30px;
+}
+
+nav ul li a:hover {
+    color: #d1ff48;
+}
+
+.hamburger-icon {
+    font-size: 30px;
+    position: fixed;
+    top: 8px;
+    right: 60px;
+    z-index: 1000;
+    cursor: pointer;
+    width: 40px;
+    /* Adjust the overall width */
+    height: 50px;
+    /* Adjust the overall height */
+}
+
+.hamburger-icon div {
+    background-color: #000;
+    /* Set the color */
+    height: 5px;
+    /* Line height */
+    margin: 5px 0;
+    /* Space between lines */
+    width: 100%;
+    /* Make sure the line takes full width */
+}
+
+#banner {
+    width: 100%;
+    height: 100vh;
+    background-image: url('path_to_your_banner_image.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+.shop-icon {
+    font-size: 2.5em;
+    color: #d1ff48;
+    transition: all 0.3s ease;
+    position: relative;
+    top: -15px;
+}
+
+.shop-icon:hover {
+    color: #9a9a9a;
+    transform: scale(1.1);
+}
+
+.shop-icon i {
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+#shop .product-category {
+    margin-top: 3em;
+    text-align: center;
+}
+
+.product-category h2 {
+    font-size: 2.5em;
+    font-weight: 600;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #edff93;
+    text-transform: uppercase;
+}
+
+.product-category h2::after {
+    content: '';
+    display: block;
+    width: 50%;
+    height: 2px;
+    background-color: #d1ff48;
+    margin: 10px auto;
+}
+
+.product-item {
+    background-color: #2e2e2e;
+    padding: 1em;
+    text-align: center;
+    border-radius: 10px;
+    width: 250px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.5);
+    margin: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    transition: transform 0.3s ease;
+}
+
+.product-item:hover {
+    transform: scale(1.05);
+}
+
+.product-item img {
+    width: 100%;
+    border-radius: 10px;
+    margin-top: 1em;
+}
+
+.product-item h3 {
+    margin-top: 0;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.size-selection,
+.quantity-selection {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.add-to-cart {
+    background-color: #d1ff48;
+    border: none;
+    padding: 0.5em;
+    cursor: pointer;
+    font-size: 1em;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.add-to-cart:hover {
+    background-color: #a1d139;
+}
+
+.add-to-cart:active {
+    transform: scale(0.98);
+}
+
+.cart-icon {
+    position: relative;
+    display: inline-block;
+    right: -40px;
+}
+
+.cart-icon i {
+
+    font-size: 30px;
+    color: #d7eb9a;
+}
+
+.cart-icon:hover {
+    color: #a1d139;
+}
+
+#cart-count {
+    position: absolute;
+    top: -8px;
+    right: -10px;
+    background-color: red;
+    color: white;
+    font-size: 12px;
+    padding: 2px 6px;
+    border-radius: 50%;
+}
+
+.order-ticket {
+    margin-top: 3em;
+    text-align: center;
+}
+
+.order-ticket input {
+    padding: 0.5em;
+    margin: 1em;
+    font-size: 1em;
+    border-radius: 5px;
+    width: 300px;
+}
+
+.order-ticket button {
+    padding: 0.5em 2em;
+    background-color: #d1ff48;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.order-ticket button:hover {
+    background-color: #a1d139;
+}
+
+#order-ticket-container {
+    margin-top: 2em;
+}
+
+#order-ticket-container .ticket {
+    background-color: #333;
+    color: #eef8ce;
+    padding: 1em;
+    margin-top: 1em;
+    border-radius: 10px;
+    text-align: left;
+    display: inline-block;
+    width: 80%;
+}
+
+@media screen and (max-width: 768px) {
+    nav ul {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        background-color: #fff;
+        /* or your theme */
+        position: absolute;
+        top: 60px;
+        /* adjust as needed */
+        right: 10px;
+        padding: 10px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .cart-icon {
+        position: absolute;
+        right: 10px;
+        top: 10px;
+    }
+
+    header .content-fit nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .product-item {
+        width: 100%;
+        margin: 0.5em;
+    }
+}

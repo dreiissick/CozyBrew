@@ -1,0 +1,356 @@
+@import url('https://fonts.cdnfonts.com/css/devil-breeze');
+@import url('https://fonts.cdnfonts.com/css/poppins');
+@import url('https://fonts.cdnfonts.com/css/bimbo');
+
+body {
+    margin: 0;
+    font-family: "Montserrat", sans-serif;
+    background-color: #1B1B1B;
+    color: #eef8ce;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    background-image:
+        url(img/bg.png),
+        repeating-linear-gradient(to right, transparent 0 500px, #73814B33 500px 501px);
+    background-size: 100%;
+}
+
+*::-webkit-scrollbar {
+    width: 0;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+body.loaded {
+    opacity: 1;
+}
+
+.section {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    will-change: opacity, transform;
+    scroll-margin-top: 100px;
+    /* so nav scroll still aligns nicely */
+}
+
+.section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.content-fit {
+    width: min(1200px, 90vw);
+    margin: auto;
+    min-height: 100vh;
+    position: relative;
+    padding-block: 10em;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 1;
+    transition: opacity 1s ease-out;
+}
+
+
+.logo-overlay {
+    font-family: 'Devil Breeze', cursive;
+    font-size: 4em;
+    color: #d1ff48;
+    cursor: pointer;
+    animation: fadeInLogo 2s ease-out forwards;
+}
+
+
+@keyframes fadeInLogo {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+header {
+    padding-block: 1em;
+    position: fixed;
+    top: 0;
+    height: 10%;
+    width: 100%;
+    z-index: 10px;
+    backdrop-filter: blur(20px);
+    z-index: 100;
+    background-color: #1B1B1B11;
+    background-image: repeating-linear-gradient(to right, transparent 0 500px, #eee1 500px 501px);
+}
+
+header .content-fit {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: unset !important;
+    padding-block: unset !important;
+}
+
+header .content-fit nav ul {
+    display: flex;
+    gap: 2em;
+    z-index: 999;
+}
+
+.logo {
+    font-family: 'Devil Breeze', cursive;
+    font-size: 2em;
+    cursor: pointer;
+    color: #d1ff48;
+    margin-top: -20px;
+
+}
+
+nav ul li a {
+    color: #eef8ce;
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #d1ff48;
+}
+
+.shop-icon {
+    font-size: 2.5em;
+    /* Size of the icon */
+    color: #d1ff48;
+    /* Icon color */
+    transition: all 0.3s ease;
+    /* Smooth transition effect */
+    position: relative;
+    /* Make sure we can use top property */
+    top: -15px;
+    /* Move the icon slightly up */
+}
+
+.shop-icon:hover {
+    color: #9a9a9a;
+    /* Change color on hover */
+    transform: scale(1.1);
+    /* Slight zoom on hover */
+}
+
+/* You can also add a shadow or border */
+.shop-icon i {
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+#banner .title {
+    color: #D7C4A3;
+    font-size: 11em;
+    font-family: "devil breeze";
+    font-weight: bold;
+    position: relative;
+    text-align: center;
+    margin-top: -0.5em;
+
+}
+
+#banner .title::before {
+    content: attr(data-before);
+    position: absolute;
+    top: 0.5em;
+    inset: 0.66em 0 0 0;
+    z-index: -1;
+    color: #7a695b71;
+}
+
+.section .decorate {
+    position: absolute;
+}
+
+#intro .content-fit {
+    display: flex;
+    gap: 30%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.section .number {
+    font-family: "devil breeze";
+    font-size: 15em;
+    font-weight: bold;
+}
+
+.section .content-fit .title {
+    font-family: "devil breeze";
+    font-size: 5em;
+    font-weight: bold;
+}
+
+#description .content-fit {
+    padding-right: 30%;
+}
+
+#description .number {
+    font-size: 5em;
+}
+
+#description .title {
+    font-size: 7em;
+    font-weight: 500;
+}
+
+#contact .content-fit {
+    display: flex;
+    justify-content: flex-start;
+    /* Align to the left */
+    align-items: flex-start;
+    /* Align to the top */
+    flex-direction: column;
+    text-align: left;
+    /* Align text to the left */
+}
+
+#contact table {
+    width: min(800px, 90vw);
+    padding-top: 2em;
+    font-size: 2em;
+    margin: auto;
+    text-align: left;
+    /* Ensure the table text is aligned to the left */
+}
+
+#contact table td {
+    padding-block: 0.5em;
+    border-bottom: 1px dashed #445022;
+}
+
+#contact table td:nth-child(1) {
+    text-align: left;
+    font-weight: 500;
+}
+
+#contact table td:nth-child(2) {
+    text-align: left;
+    /* Align the second column to the left as well */
+    font-weight: 200;
+}
+
+#contact .sign {
+    font-family: 'Bimbo', sans-serif;
+    font-size: 10em;
+}
+
+.social-icons {
+    margin-top: 20px;
+}
+
+.social-icons a {
+    margin-right: 15px;
+    color: #fff;
+    font-size: 24px;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #d1ff48;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* Fix underline on hover */
+a:hover {
+    color: #d1ff48;
+    text-decoration: none;
+}
+
+#container3D {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    pointer-events: none;
+    width: 100%;
+    /* Ensure it takes up the full width */
+    height: 100vh;
+    /* Full screen height */
+}
+
+@media screen and (max-width: 1023px) {
+    #banner .title {
+        font-size: 5em;
+    }
+
+    #intro .content-fit {
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    #banner .title {
+        font-size: 3em;
+    }
+
+    #intro .content-fit {
+        flex-direction: column;
+    }
+
+    .section .number {
+        font-size: 5em;
+    }
+
+    .section .content-fit .title {
+        font-size: 2em;
+    }
+
+    #description .content-fit {
+        padding-right: 0;
+    }
+
+    #contact table {
+        font-size: 1em;
+    }
+
+    #contact .sign {
+        font-size: 2em;
+    }
+
+    #container3D {
+        position: absolute;
+    }
+}
+
+/* Add responsiveness for the logo */
+@media (max-width: 768px) {
+    .logo-overlay {
+        font-size: 2.5em;
+    }
+}

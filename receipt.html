@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Receipt - CozyBrew</title>
+    <link rel="stylesheet" href="css/receipt.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+       
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="content-fit">
+            <div class="logo" onclick="location.href='index.html'">CozyBrew</div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Receipt Section -->
+    <section id="receipt" class="section">
+        <div class="content-fit">
+            <h2>Thank you for your order!</h2>
+            <div id="receipt-details">
+                <!-- Order details will go here -->
+                <p><strong>Order ID:</strong> #<span id="order-id">123456</span></p>
+                <div id="receipt-items">
+                    <!-- Dynamically load items here if needed -->
+                    <p>No items found.</p>
+                </div>
+                <p><strong>Total Paid:</strong> $<span id="receipt-total">0.00</span></p>
+            </div>
+
+            <!-- Button for Print and Download -->
+            <div id="receipt-actions">
+                <button onclick="printReceipt()">Print Receipt</button>
+                <button onclick="downloadReceipt()">Download as JPEG</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="content-fit">
+            <p>&copy; 2025 CozyBrew. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/receipt.js"></script>
+   
+</body>
+</html>

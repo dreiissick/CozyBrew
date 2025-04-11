@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CozyBrew Shop</title>
+    <link rel="stylesheet" href="css/shop.css">
+    <!-- Boxicons CDN Link -->
+    <link href="https://unpkg.com/boxicons/css/boxicons.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <header>
+        <div class="content-fit">
+            <div class="logo" onclick="location.href='index.html'">CozyBrew</div>
+            <div class="hamburger-icon" onclick="toggleMenu()">&#9776;</div>
+            <div class="cart-icon">
+                <a href="cart.html">
+                    <i class='bx bx-cart'></i>
+                    <span id="cart-count">0</span>
+                </a>
+            </div>
+        </div>
+        <nav id="nav-menu" class="menu-hidden">
+            <ul>
+                <li><a href="#frappe">Frappe</a></li>
+                <li><a href="#coffee">Coffee</a></li>
+                <li><a href="#non-coffee">Non-Coffee Drinks</a></li>
+                <li><a href="#platter">Platter</a></li>
+                <li><a href="#breads">Breads</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="shop">
+        <div class="content-fit">
+            <!-- Frappe Section -->
+            <div class="product-category" id="frappe">
+                <h2>Frappe</h2>
+                <!-- First Frappe Item -->
+                <div class="product-item">
+                    <img src="img/frappe.jpg" alt="Frappe">
+                    <h3>Classic Frappe</h3>
+                    <p>A refreshing, iced coffee blended to perfection.</p>
+                    <div class="size-selection">
+                        <label for="size">Choose Size: </label>
+                        <select id="size">
+                            <option value="small">Small</option>
+                            <option value="medium">Medium</option>
+                            <option value="large">Large</option>
+                        </select>
+                    </div>
+                    <div class="quantity-selection">
+                        <label for="quantity">Quantity: </label>
+                        <input type="number" id="quantity" value="1" min="1" max="10">
+                    </div>
+                    <button class="add-to-cart" onclick="addToCart('Classic Frappe')">Add to Cart</button>
+                </div>
+                <!-- Second Frappe Item -->
+                <div class="product-item">
+                    <img src="img/vanilla-frappe.jpg" alt="Vanilla Frappe">
+                    <h3>Vanilla Frappe</h3>
+                    <p>A smooth blend of iced coffee with a hint of vanilla.</p>
+                    <div class="size-selection">
+                        <label for="size">Choose Size: </label>
+                        <select id="size">
+                            <option value="small">Small</option>
+                            <option value="medium">Medium</option>
+                            <option value="large">Large</option>
+                        </select>
+                    </div>
+                    <div class="quantity-selection">
+                        <label for="quantity">Quantity: </label>
+                        <input type="number" id="quantity" value="1" min="1" max="10">
+                    </div>
+                    <button class="add-to-cart" onclick="addToCart('Vanilla Frappe')">Add to Cart</button>
+                </div>
+                <!-- Third Frappe Item -->
+                <div class="product-item">
+                    <img src="img/matcha-frappe.jpg" alt="Matcha Frappe">
+                    <h3>Matcha Frappe</h3>
+                    <p>A delightful blend of matcha and iced coffee for a unique twist.</p>
+                    <div class="size-selection">
+                        <label for="size">Choose Size: </label>
+                        <select id="size">
+                            <option value="small">Small</option>
+                            <option value="medium">Medium</option>
+                            <option value="large">Large</option>
+                        </select>
+                    </div>
+                    <div class="quantity-selection">
+                        <label for="quantity">Quantity: </label>
+                        <input type="number" id="quantity" value="1" min="1" max="10">
+                    </div>
+                    <button class="add-to-cart" onclick="addToCart('Matcha Frappe')">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Coffee Section -->
+            <div class="product-category" id="coffee">
+                <h2>Coffee</h2>
+                <div class="product-item">
+                    <img src="img/ice-coffee.jpg" alt="Ice Coffee">
+                    <h3>Ice Coffee</h3>
+                    <p>Chilled coffee for that perfect cool refreshment.</p>
+                    <div class="size-selection">
+                        <label for="size">Choose Size: </label>
+                        <select id="size">
+                            <option value="small">Small</option>
+                            <option value="medium">Medium</option>
+                            <option value="large">Large</option>
+                        </select>
+                    </div>
+                    <div class="quantity-selection">
+                        <label for="quantity">Quantity: </label>
+                        <input type="number" id="quantity" value="1" min="1" max="10">
+                    </div>
+                    <button class="add-to-cart" onclick="addToCart('Ice Coffee')">Add to Cart</button>
+                </div>
+                <div class="product-item">
+                    <img src="img/hot-coffee.jpg" alt="Hot Coffee">
+                    <h3>Hot Coffee</h3>
+                    <p>A warm, bold cup of freshly brewed coffee.</p>
+                    <div class="size-selection">
+                        <label for="size">Choose Size: </label>
+                        <select id="size">
+                            <option value="small">Small</option>
+                            <option value="medium">Medium</option>
+                            <option value="large">Large</option>
+                        </select>
+                    </div>
+                    <div class="quantity-selection">
+                        <label for="quantity">Quantity: </label>
+                        <input type="number" id="quantity" value="1" min="1" max="10">
+                    </div>
+                    <button class="add-to-cart" onclick="addToCart('Hot Coffee')">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Non-Coffee Section -->
+            <div class="product-category" id="non-coffee">
+                <h2>Non-Coffee Drinks</h2>
+                <div class="product-item">
+                    <img src="img/tea.jpg" alt="Tea">
+                    <h3>Tea</h3>
+                    <p>Freshly brewed herbal tea, perfect for a warm day.</p>
+                    <div class="size-selection">
+                        <label for="size">Choose Size: </label>
+                        <select id="size">
+                            <option value="small">Small</option>
+                            <option value="medium">Medium</option>
+                            <option value="large">Large</option>
+                        </select>
+                    </div>
+                    <div class="quantity-selection">
+                        <label for="quantity">Quantity: </label>
+                        <input type="number" id="quantity" value="1" min="1" max="10">
+                    </div>
+                    <button class="add-to-cart" onclick="addToCart('Tea')">Add to Cart</button>
+                </div>
+                <div class="product-item">
+                    <img src="img/juice.jpg" alt="Juice">
+                    <h3>Juice</h3>
+                    <p>Refreshing fruit juices to quench your thirst.</p>
+                    <div class="size-selection">
+                        <label for="size">Choose Size: </label>
+                        <select id="size">
+                            <option value="small">Small</option>
+                            <option value="medium">Medium</option>
+                            <option value="large">Large</option>
+                        </select>
+                    </div>
+                    <div class="quantity-selection">
+                        <label for="quantity">Quantity: </label>
+                        <input type="number" id="quantity" value="1" min="1" max="10">
+                    </div>
+                    <button class="add-to-cart" onclick="addToCart('Juice')">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Platter Section -->
+            <div class="product-category" id="platter">
+                <h2>Platter</h2>
+                <div class="product-item">
+                    <img src="img/platter.jpg" alt="Platter">
+                    <h3>Classic Platter</h3>
+                    <p>A combination of savory snacks, perfect for sharing.</p>
+                    <div class="size-selection">
+                        <label for="size">Choose Size: </label>
+                        <select id="size">
+                            <option value="small">Small</option>
+                            <option value="medium">Medium</option>
+                            <option value="large">Large</option>
+                        </select>
+                    </div>
+                    <div class="quantity-selection">
+                        <label for="quantity">Quantity: </label>
+                        <input type="number" id="quantity" value="1" min="1" max="10">
+                    </div>
+                    <button class="add-to-cart" onclick="addToCart('Classic Platter')">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Breads Section -->
+            <div class="product-category" id="breads">
+                <h2>Breads</h2>
+                <div class="product-item">
+                    <img src="img/bread.jpg" alt="Bread">
+                    <h3>Fresh Bread</h3>
+                    <p>Warm, freshly baked bread to complement your drink.</p>
+                    <div class="size-selection">
+                        <label for="size">Choose Size: </label>
+                        <select id="size">
+                            <option value="small">Small</option>
+                            <option value="medium">Medium</option>
+                            <option value="large">Large</option>
+                        </select>
+                    </div>
+                    <div class="quantity-selection">
+                        <label for="quantity">Quantity: </label>
+                        <input type="number" id="quantity" value="1" min="1" max="10">
+                    </div>
+                    <button class="add-to-cart" onclick="addToCart('Fresh Bread')">Add to Cart</button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <script src="js/shop.js"></script>
+    
+</body>
+
+</html>

@@ -1,0 +1,194 @@
+@import url('https://fonts.cdnfonts.com/css/devil-breeze');
+@import url('https://fonts.cdnfonts.com/css/poppins');
+@import url('https://fonts.cdnfonts.com/css/bimbo');
+
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    background-color: #1B1B1B;
+    color: #eef8ce;
+    background-image:
+        url(img/bg.png),
+        repeating-linear-gradient(to right, transparent 0 500px, #3e4b1933 500px 501px);
+    background-size: 100%;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+}
+
+*::-webkit-scrollbar {
+    width: 0;
+}
+
+header {
+    padding-block: 1em;
+    position: fixed;
+    top: 0;
+    height: 10%;
+    width: 100%;
+    z-index: 100;
+    backdrop-filter: blur(20px);
+    background-color: #1B1B1B11;
+    background-image: repeating-linear-gradient(to right, transparent 0 500px, #eee1 500px 501px);
+}
+
+header .content-fit {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: min(1200px, 90vw);
+    margin: auto;
+}
+
+.logo {
+    font-family: 'Devil Breeze', cursive;
+    font-size: 2em;
+    cursor: pointer;
+    color: #d1ff48;
+    position: relative;
+    top: -50px; 
+}
+nav {
+    position: relative;
+    top: -55px; /* Adjust this value to move the nav up */
+}
+
+nav ul {
+    display: flex;
+    gap: 2em;
+}
+
+nav a {
+    text-decoration: none;
+    color: #eef8ce;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #d1ff48;
+}
+
+body {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+body.loaded {
+    opacity: 1;
+}
+
+.section {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    will-change: opacity, transform;
+    scroll-margin-top: 100px;
+    /* so nav scroll still aligns nicely */
+}
+
+.section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.content-fit {
+    width: min(1200px, 90vw);
+    margin: auto;
+    padding-block: 4em;
+}
+
+#receipt-details {
+    background-color: #2e2e2e;
+    padding: 2em;
+    border-radius: 12px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.6);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+#receipt-details p {
+    margin-bottom: 1em;
+    font-size: 1em;
+}
+
+#receipt-items ul {
+    padding-left: 1.2em;
+}
+
+#receipt-items li {
+    margin-bottom: 0.5em;
+    list-style: disc;
+}
+
+h2 {
+    font-family: 'Bimbo', cursive;
+    font-size: 2em;
+    color: #d1ff48;
+    text-align: center;
+    margin-bottom: 2em;
+}
+
+button {
+    margin-top: 2em;
+    padding: 0.75em 2em;
+    background-color: #d1ff48;
+    color: #1B1B1B;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: #a1d139;
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+footer {
+    text-align: center;
+    padding: 1em;
+    background-color: transparent;
+    font-size: 0.9em;
+    color: #888;
+}
+
+#receipt-actions {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+#receipt-actions button {
+    padding: 0.5em 1.5em;
+    font-size: 1em;
+    background-color: #d1ff48;
+    color: #1B1B1B;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#receipt-actions button:hover {
+    background-color: #a1d139;
+}
+
+@media print {
+    #receipt-actions {
+        display: none;
+    }
+}
